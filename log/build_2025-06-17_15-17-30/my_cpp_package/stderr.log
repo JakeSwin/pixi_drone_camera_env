@@ -1,0 +1,2 @@
+/Users/swin/code/ros2/ros2_humble/.pixi/envs/default/bin/install_name_tool: warning: changes being made to the file will invalidate the code signature in: /Users/swin/code/ros2/ros2_humble/install/my_cpp_package/lib/my_cpp_package/my_node
+[cctools-port]: generating fake signature for '/Users/swin/code/ros2/ros2_humble/install/my_cpp_package/lib/my_cpp_package/my_node'

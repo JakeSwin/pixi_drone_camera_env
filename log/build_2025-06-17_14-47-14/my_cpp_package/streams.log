@@ -1,0 +1,51 @@
+[0.012s] Invoking command in '/Users/swin/code/ros2/ros2_humble/build/my_cpp_package': PIXI_PROMPT=(ros2_humble) SHLVL=3 _=/usr/bin/env /Users/swin/code/ros2/ros2_humble/.pixi/envs/default/bin/cmake --build /Users/swin/code/ros2/ros2_humble/build/my_cpp_package -- -j10 -l10
+[0.118s] [0/1] Re-running CMake...
+[0.134s] CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+[0.134s]   Compatibility with CMake < 3.10 will be removed from a future version of
+[0.134s]   CMake.
+[0.134s] 
+[0.134s]   Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+[0.134s]   to tell CMake that the project requires at least <min> but has been updated
+[0.134s]   to work with policies introduced by <max> or earlier.
+[0.134s] 
+[0.134s] 
+[0.168s] -- Found ament_cmake: 1.3.11 (/Users/swin/code/ros2/ros2_humble/.pixi/envs/default/share/ament_cmake/cmake)
+[0.277s] -- Found rclcpp: 16.0.11 (/Users/swin/code/ros2/ros2_humble/.pixi/envs/default/share/rclcpp/cmake)
+[0.300s] -- Found rosidl_generator_c: 3.1.6 (/Users/swin/code/ros2/ros2_humble/.pixi/envs/default/share/rosidl_generator_c/cmake)
+[0.302s] -- Found rosidl_adapter: 3.1.6 (/Users/swin/code/ros2/ros2_humble/.pixi/envs/default/share/rosidl_adapter/cmake)
+[0.308s] -- Found rosidl_generator_cpp: 3.1.6 (/Users/swin/code/ros2/ros2_humble/.pixi/envs/default/share/rosidl_generator_cpp/cmake)
+[0.316s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.327s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.428s] -- Found rmw_implementation_cmake: 6.1.2 (/Users/swin/code/ros2/ros2_humble/.pixi/envs/default/share/rmw_implementation_cmake/cmake)
+[0.430s] -- Found rmw_fastrtps_cpp: 6.2.7 (/Users/swin/code/ros2/ros2_humble/.pixi/envs/default/share/rmw_fastrtps_cpp/cmake)
+[0.547s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.583s] -- Found cv_bridge: 3.2.1 (/Users/swin/code/ros2/ros2_humble/.pixi/envs/default/share/cv_bridge/cmake)
+[0.647s] -- Found image_transport: 3.1.10 (/Users/swin/code/ros2/ros2_humble/.pixi/envs/default/share/image_transport/cmake)
+[0.728s] -- Configuring done (0.6s)
+[0.748s] -- Generating done (0.0s)
+[0.749s] -- Build files have been written to: /Users/swin/code/ros2/ros2_humble/build/my_cpp_package
+[1.984s] [1/3] Building CXX object CMakeFiles/my_node.dir/src/my_node.cpp.o
+[2.056s] [2/3] Linking CXX executable my_node
+[2.057s] ld: warning: duplicate -rpath '/Users/swin/code/ros2/ros2_humble/.pixi/envs/default/lib' ignored
+[2.058s] Invoked command in '/Users/swin/code/ros2/ros2_humble/build/my_cpp_package' returned '0': PIXI_PROMPT=(ros2_humble) SHLVL=3 _=/usr/bin/env /Users/swin/code/ros2/ros2_humble/.pixi/envs/default/bin/cmake --build /Users/swin/code/ros2/ros2_humble/build/my_cpp_package -- -j10 -l10
+[2.089s] Invoking command in '/Users/swin/code/ros2/ros2_humble/build/my_cpp_package': PIXI_PROMPT=(ros2_humble) SHLVL=3 _=/usr/bin/env /Users/swin/code/ros2/ros2_humble/.pixi/envs/default/bin/cmake --install /Users/swin/code/ros2/ros2_humble/build/my_cpp_package
+[2.097s] -- Install configuration: ""
+[2.097s] -- Installing: /Users/swin/code/ros2/ros2_humble/install/my_cpp_package/lib/my_cpp_package/my_node
+[2.100s] /Users/swin/code/ros2/ros2_humble/.pixi/envs/default/bin/install_name_tool: warning: changes being made to the file will invalidate the code signature in: /Users/swin/code/ros2/ros2_humble/install/my_cpp_package/lib/my_cpp_package/my_node
+[2.100s] [cctools-port]: generating fake signature for '/Users/swin/code/ros2/ros2_humble/install/my_cpp_package/lib/my_cpp_package/my_node'
+[2.126s] -- Up-to-date: /Users/swin/code/ros2/ros2_humble/install/my_cpp_package/share/ament_index/resource_index/package_run_dependencies/my_cpp_package
+[2.126s] -- Up-to-date: /Users/swin/code/ros2/ros2_humble/install/my_cpp_package/share/ament_index/resource_index/parent_prefix_path/my_cpp_package
+[2.126s] -- Up-to-date: /Users/swin/code/ros2/ros2_humble/install/my_cpp_package/share/my_cpp_package/environment/ament_prefix_path.sh
+[2.126s] -- Installing: /Users/swin/code/ros2/ros2_humble/install/my_cpp_package/share/my_cpp_package/environment/ament_prefix_path.dsv
+[2.127s] -- Up-to-date: /Users/swin/code/ros2/ros2_humble/install/my_cpp_package/share/my_cpp_package/environment/path.sh
+[2.127s] -- Installing: /Users/swin/code/ros2/ros2_humble/install/my_cpp_package/share/my_cpp_package/environment/path.dsv
+[2.127s] -- Up-to-date: /Users/swin/code/ros2/ros2_humble/install/my_cpp_package/share/my_cpp_package/local_setup.bash
+[2.127s] -- Up-to-date: /Users/swin/code/ros2/ros2_humble/install/my_cpp_package/share/my_cpp_package/local_setup.sh
+[2.127s] -- Up-to-date: /Users/swin/code/ros2/ros2_humble/install/my_cpp_package/share/my_cpp_package/local_setup.zsh
+[2.127s] -- Installing: /Users/swin/code/ros2/ros2_humble/install/my_cpp_package/share/my_cpp_package/local_setup.dsv
+[2.127s] -- Installing: /Users/swin/code/ros2/ros2_humble/install/my_cpp_package/share/my_cpp_package/package.dsv
+[2.128s] -- Up-to-date: /Users/swin/code/ros2/ros2_humble/install/my_cpp_package/share/ament_index/resource_index/packages/my_cpp_package
+[2.128s] -- Up-to-date: /Users/swin/code/ros2/ros2_humble/install/my_cpp_package/share/my_cpp_package/cmake/my_cpp_packageConfig.cmake
+[2.128s] -- Up-to-date: /Users/swin/code/ros2/ros2_humble/install/my_cpp_package/share/my_cpp_package/cmake/my_cpp_packageConfig-version.cmake
+[2.128s] -- Up-to-date: /Users/swin/code/ros2/ros2_humble/install/my_cpp_package/share/my_cpp_package/package.xml
+[2.129s] Invoked command in '/Users/swin/code/ros2/ros2_humble/build/my_cpp_package' returned '0': PIXI_PROMPT=(ros2_humble) SHLVL=3 _=/usr/bin/env /Users/swin/code/ros2/ros2_humble/.pixi/envs/default/bin/cmake --install /Users/swin/code/ros2/ros2_humble/build/my_cpp_package

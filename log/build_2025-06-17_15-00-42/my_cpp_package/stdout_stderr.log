@@ -1,0 +1,46 @@
+[1/2] Building CXX object CMakeFiles/my_node.dir/src/my_node.cpp.o
+FAILED: CMakeFiles/my_node.dir/src/my_node.cpp.o 
+/Users/swin/code/ros2/ros2_humble/.pixi/envs/default/bin/arm64-apple-darwin20.0.0-clang++ -DDEFAULT_RMW_IMPLEMENTATION=rmw_cyclonedds_cpp -isystem /Users/swin/code/ros2/ros2_humble/.pixi/envs/default/include/rclcpp -isystem /Users/swin/code/ros2/ros2_humble/.pixi/envs/default/include/cv_bridge -isystem /Users/swin/code/ros2/ros2_humble/.pixi/envs/default/include/image_transport -isystem /Users/swin/code/ros2/ros2_humble/.pixi/envs/default/include/sensor_msgs -isystem /Users/swin/code/ros2/ros2_humble/.pixi/envs/default/include/python3.11 -isystem /Users/swin/code/ros2/ros2_humble/.pixi/envs/default/lib/python3.11/site-packages/numpy/core/include -isystem /Users/swin/code/ros2/ros2_humble/.pixi/envs/default/include/opencv4 -isystem /Users/swin/code/ros2/ros2_humble/.pixi/envs/default/include/ament_index_cpp -isystem /Users/swin/code/ros2/ros2_humble/.pixi/envs/default/include/libstatistics_collector -isystem /Users/swin/code/ros2/ros2_humble/.pixi/envs/default/include/builtin_interfaces -isystem /Users/swin/code/ros2/ros2_humble/.pixi/envs/default/include/rosidl_runtime_c -isystem /Users/swin/code/ros2/ros2_humble/.pixi/envs/default/include/rcutils -isystem /Users/swin/code/ros2/ros2_humble/.pixi/envs/default/include/rosidl_typesupport_interface -isystem /Users/swin/code/ros2/ros2_humble/.pixi/envs/default/include/rosidl_runtime_cpp -isystem /Users/swin/code/ros2/ros2_humble/.pixi/envs/default/include/rosidl_typesupport_fastrtps_cpp -isystem /Users/swin/code/ros2/ros2_humble/.pixi/envs/default/include/rmw -isystem /Users/swin/code/ros2/ros2_humble/.pixi/envs/default/include/rosidl_typesupport_fastrtps_c -isystem /Users/swin/code/ros2/ros2_humble/.pixi/envs/default/include/rosidl_typesupport_introspection_c -isystem /Users/swin/code/ros2/ros2_humble/.pixi/envs/default/include/rosidl_typesupport_introspection_cpp -isystem /Users/swin/code/ros2/ros2_humble/.pixi/envs/default/include/rcl -isystem /Users/swin/code/ros2/ros2_humble/.pixi/envs/default/include/rcl_interfaces -isystem /Users/swin/code/ros2/ros2_humble/.pixi/envs/default/include/rcl_logging_interface -isystem /Users/swin/code/ros2/ros2_humble/.pixi/envs/default/include/rcl_yaml_param_parser -isystem /Users/swin/code/ros2/ros2_humble/.pixi/envs/default/include/tracetools -isystem /Users/swin/code/ros2/ros2_humble/.pixi/envs/default/include/rcpputils -isystem /Users/swin/code/ros2/ros2_humble/.pixi/envs/default/include/statistics_msgs -isystem /Users/swin/code/ros2/ros2_humble/.pixi/envs/default/include/rosgraph_msgs -isystem /Users/swin/code/ros2/ros2_humble/.pixi/envs/default/include/rosidl_typesupport_cpp -isystem /Users/swin/code/ros2/ros2_humble/.pixi/envs/default/include/rosidl_typesupport_c -isystem /Users/swin/code/ros2/ros2_humble/.pixi/envs/default/include/geometry_msgs -isystem /Users/swin/code/ros2/ros2_humble/.pixi/envs/default/include/std_msgs -isystem /Users/swin/code/ros2/ros2_humble/.pixi/envs/default/include/message_filters -ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -stdlib=libc++ -fvisibility-inlines-hidden -fmessage-length=0 -isystem /Users/swin/code/ros2/ros2_humble/.pixi/envs/default/include -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -MD -MT CMakeFiles/my_node.dir/src/my_node.cpp.o -MF CMakeFiles/my_node.dir/src/my_node.cpp.o.d -o CMakeFiles/my_node.dir/src/my_node.cpp.o -c /Users/swin/code/ros2/ros2_humble/src/my_cpp_package/src/my_node.cpp
+/Users/swin/code/ros2/ros2_humble/src/my_cpp_package/src/my_node.cpp:11:7: error: no matching conversion for functional-style cast from 'double' to 'std::chrono::seconds' (aka 'duration<long long>')
+   11 |       std::chrono::seconds(0.016),
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/swin/code/ros2/ros2_humble/.pixi/envs/default/bin/../include/c++/v1/__chrono/duration.h:160:28: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'double' to 'const duration<long long>' for 1st argument
+  160 | class _LIBCPP_TEMPLATE_VIS duration {
+      |                            ^~~~~~~~
+/Users/swin/code/ros2/ros2_humble/.pixi/envs/default/bin/../include/c++/v1/__chrono/duration.h:160:28: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'double' to 'duration<long long>' for 1st argument
+  160 | class _LIBCPP_TEMPLATE_VIS duration {
+      |                            ^~~~~~~~
+/Users/swin/code/ros2/ros2_humble/.pixi/envs/default/bin/../include/c++/v1/__chrono/duration.h:210:52: note: candidate template ignored: requirement 'treat_as_floating_point<long long>::value || !treat_as_floating_point<double>::value' was not satisfied [with _Rep2 = double]
+  210 |   _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR explicit duration(const _Rep2& __r) : __rep_(__r) {}
+      |                                                    ^
+/Users/swin/code/ros2/ros2_humble/.pixi/envs/default/bin/../include/c++/v1/__chrono/duration.h:219:43: note: candidate template ignored: could not match 'duration<_Rep2, _Period2>' against 'double'
+  219 |   _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR duration(const duration<_Rep2, _Period2>& __d)
+      |                                           ^
+/Users/swin/code/ros2/ros2_humble/.pixi/envs/default/bin/../include/c++/v1/__chrono/duration.h:201:13: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+  201 |   constexpr duration() = default;
+      |             ^
+/Users/swin/code/ros2/ros2_humble/src/my_cpp_package/src/my_node.cpp:13:11: error: use of undeclared identifier 'cv'
+   13 |           cv::Mat frame(720, 1280, CV_8UC3);
+      |           ^
+/Users/swin/code/ros2/ros2_humble/src/my_cpp_package/src/my_node.cpp:14:49: error: expected ';' after expression
+   14 |           fread(frame.data, 1, 1280*720*3, pipe)
+      |                                                 ^
+      |                                                 ;
+/Users/swin/code/ros2/ros2_humble/src/my_cpp_package/src/my_node.cpp:14:17: error: use of undeclared identifier 'frame'
+   14 |           fread(frame.data, 1, 1280*720*3, pipe)
+      |                 ^
+/Users/swin/code/ros2/ros2_humble/src/my_cpp_package/src/my_node.cpp:15:11: error: use of undeclared identifier 'cv'
+   15 |           cv::imshow("RTMP Stream", frame);
+      |           ^
+/Users/swin/code/ros2/ros2_humble/src/my_cpp_package/src/my_node.cpp:15:37: error: use of undeclared identifier 'frame'; did you mean 'free'?
+   15 |           cv::imshow("RTMP Stream", frame);
+      |                                     ^~~~~
+      |                                     free
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/malloc/_malloc.h:56:7: note: 'free' declared here
+   56 | void  free(void * __unsafe_indexable);
+      |       ^
+/Users/swin/code/ros2/ros2_humble/src/my_cpp_package/src/my_node.cpp:16:11: error: use of undeclared identifier 'cv'
+   16 |           cv::waitKey(1);
+      |           ^
+7 errors generated.
+ninja: build stopped: subcommand failed.

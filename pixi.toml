@@ -1,0 +1,27 @@
+[workspace]
+authors = ["Jacob Swindell <jacob.swindell@btinternet.com>"]
+channels = ["robostack-humble", "conda-forge"]
+name = "ros2_humble"
+platforms = ["osx-arm64"]
+version = "0.1.0"
+
+[tasks]
+build = "colcon build --cmake-args -G Ninja --event-handlers console_direct+"
+run = "ros2 run my_cpp_package my_node"
+
+[activation]
+scripts = ["install/setup.sh"]
+
+[dependencies]
+ros-humble-desktop = ">=0.10.0,<0.11"
+ros-humble-vision-opencv = ">=3.2.1,<4"
+ros-humble-cv-bridge = ">=3.2.1,<4"
+ros-humble-image-transport = ">=3.1.10,<4"
+colcon-common-extensions = ">=0.3.0,<0.4"
+setuptools = "<=58.2.0"
+ros-humble-ament-cmake-auto = ">=1.3.11,<2"
+compilers = ">=1.9.0,<2"
+pkg-config = ">=0.29.2,<0.30"
+cmake = ">=4.0.3,<5"
+ninja = ">=1.12.1,<2"
+ros-humble-rqt-image-view = ">=1.2.0,<2"
