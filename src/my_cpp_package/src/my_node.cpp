@@ -7,7 +7,11 @@
 class MyNode : public rclcpp::Node {
 public:
   MyNode() : Node("my_node") {
-    publisher_ = this->create_publisher<sensor_msgs::msg::Image>("uav_image", 25);
+    auto qos = rclcpp::QoS(1)
+        .reliability(rclcpp::ReliabilityPolicy::BestEffort)
+        .history(rclcpp::HistoryPolicy::KeepLast)
+        .durability(rclcpp::DurabilityPolicy::Volatile);
+    publisher_ = this->create_publisher<sensor_msgs::msg::Image>("uav_image", qos);
     pipe_ = popen(
         "ffmpeg -i rtmp://localhost/live/stream1 -f rawvideo -pix_fmt bgr24 -", "r"
     );
@@ -24,8 +28,8 @@ public:
     );
   }
 
-  ~MyNode() override {
-      pclose(pipe_);
+  ~MyNode() {
+    pclose(pipe_);
   }
 
 private:
