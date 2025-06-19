@@ -21,12 +21,12 @@ public:
         "r");
     // Set height and width.
     // TODO: Find this dynamically?
-    camera_height_ = 720.0
-    camera_width_ = 1280.0
-    // TODO: may need to cast these widths and heights below to ints. 
+    camera_height_ = 720.0;
+    camera_width_ = 1280.0;
+    // TODO: may need to cast these widths and heights below to ints.
     timer_ = create_wall_timer(std::chrono::milliseconds(40), [this]() {
-      cv::Mat frame(camera_height_, camera_width_, CV_8UC3);
-      fread(frame.data, 1, camera_width_ * camera_height_ * 3, pipe_);
+      cv::Mat frame(static_cast<int>(camera_height_), static_cast<int>(camera_width_), CV_8UC3);
+      fread(frame.data, 1, static_cast<int>(camera_width_ * camera_height_) * 3, pipe_);
       auto msg = cv_bridge::CvImage(std_msgs::msg::Header(), "bgr8", frame)
                      .toImageMsg();
       publisher_->publish(*msg);
