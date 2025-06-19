@@ -19,9 +19,14 @@ public:
     pipe_ = popen(
         "ffmpeg -i rtmp://localhost/live/stream1 -f rawvideo -pix_fmt bgr24 -",
         "r");
+    // Set height and width.
+    // TODO: Find this dynamically?
+    camera_height_ = 720.0
+    camera_width_ = 1280.0
+    // TODO: may need to cast these widths and heights below to ints. 
     timer_ = create_wall_timer(std::chrono::milliseconds(40), [this]() {
-      cv::Mat frame(720, 1280, CV_8UC3);
-      fread(frame.data, 1, 1280 * 720 * 3, pipe_);
+      cv::Mat frame(camera_height_, camera_width_, CV_8UC3);
+      fread(frame.data, 1, camera_width_ * camera_height_ * 3, pipe_);
       auto msg = cv_bridge::CvImage(std_msgs::msg::Header(), "bgr8", frame)
                      .toImageMsg();
       publisher_->publish(*msg);
@@ -31,18 +36,18 @@ public:
       message.header.stamp = this->now();
       message.header.frame_id = "camera_optical_frame";
 
-      // Image dimensions
-      message.height = 720;
-      message.width = 1280;
+      // Image dimensions.
+      message.height = camera_height_;
+      message.width = camera_width_;
 
       // Distortion model and coefficients
       message.distortion_model = "plumb_bob";
       message.d = {0.1, -0.01, 0.001, 0.002, 0.0}; // Example values
 
-      float f_x = (6.4f * 1280.0f) / 9.6f;
-      float f_y = (6.4f * 720.0f) / 7.2f;
-      float c_x = 1280.0f / 2.0f;
-      float c_y = 720.0f / 2.0f;
+      float f_x = (6.4f * camera_width_) / 9.6f;
+      float f_y = (6.4f * camera_height_) / 7.2f;
+      float c_x = camera_width_ / 2.0f;
+      float c_y = camera_height_ / 2.0f;
 
       // Intrinsic matrix (3x3 row-major)
       message.k = {
@@ -71,6 +76,8 @@ private:
   rclcpp::Publisher<sensor_msgs::msg::CameraInfo>::SharedPtr cam_publisher_;
   rclcpp::TimerBase::SharedPtr timer_;
   FILE *pipe_;
+  float camera_height_;
+  float camera_width_;
 };
 
 int main(int argc, char **argv) {
