@@ -40,7 +40,7 @@ public:
       message.height = camera_height_;
       message.width = camera_width_;
 
-      // Distortion model and coefficients
+      // Distortion model and coefficients.
       message.distortion_model = "plumb_bob";
       message.d = {0.1, -0.01, 0.001, 0.002, 0.0}; // Example values
 
@@ -49,18 +49,18 @@ public:
       float c_x = camera_width_ / 2.0f;
       float c_y = camera_height_ / 2.0f;
 
-      // Intrinsic matrix (3x3 row-major)
+      // Intrinsic matrix (3x3 row-major). This is just what the  matrix is.
       message.k = {
-          f_x, 0.0,   c_x, // fx, 0, cx
-          0.0,   f_y, c_y, // 0, fy, cy
-          0.0,   0.0,   1.0    // Affine parameters
+          f_x,  0.0,  c_x,  // fx, 0, cx
+          0.0,  f_y,  c_y,  // 0, fy, cy
+          0.0,  0.0,  1.0   // Affine parameters
       };
 
-      // Projection matrix (3x4)
+      // Projection matrix (3x4). This is just what the matrix is.
       message.p = {
-          f_x, 0.0, c_x, 0.0,
-          0.0, f_y, c_y, 0.0,
-          0.0,   0.0, 1.0, 0.0};
+          f_x,  0.0,  c_x,  0.0,
+          0.0,  f_y,  c_y,  0.0,
+          0.0,  0.0,  1.0,  0.0};
 
       cam_publisher_->publish(message);
 
