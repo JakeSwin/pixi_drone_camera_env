@@ -9,7 +9,11 @@ Requires ffmpeg to be installed and accessable on the system. Along with the fol
 - sensor_msgs
 - OpenCV
 
+## Install
 
+- Make sure you have pixi installed: https://pixi.sh/dev/installation/
+- run `pixi install` in the project root
+- install ffmpeg with your system package manager e.g: `sudo apt install ffmpeg`
 
 ## ROS2 Topics
 
