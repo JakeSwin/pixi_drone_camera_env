@@ -17,7 +17,7 @@ Requires ffmpeg to be installed and accessable on the system. Along with the fol
 
 #### uav_image node
 
-- Topic: `uav_image`
+- Topic: `/uav_image`
     - Message type: `sensor_msgs/msg/image`
     - CvImage in BGR8 format.
 - Topic: `/uav_camera`
