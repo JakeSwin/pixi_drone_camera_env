@@ -14,6 +14,8 @@ Requires ffmpeg to be installed and accessable on the system. Along with the fol
 - Make sure you have pixi installed: https://pixi.sh/dev/installation/
 - run `pixi install` in the project root
 - install ffmpeg with your system package manager e.g: `sudo apt install ffmpeg`
+- compile with `pixi run build`
+- run with `pixi run run`
 
 ## ROS2 Topics
 
