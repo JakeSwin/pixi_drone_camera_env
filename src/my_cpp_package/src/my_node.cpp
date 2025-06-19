@@ -4,6 +4,7 @@
 #include <opencv2/opencv.hpp>
 #include <sensor_msgs/msg/camera_info.hpp>
 #include <sensor_msgs/msg/image.hpp>
+#include <std_msgs/msg/float32.hpp>
 
 class MyNode : public rclcpp::Node {
 public:
@@ -16,6 +17,8 @@ public:
         this->create_publisher<sensor_msgs::msg::Image>("uav_image", qos);
     cam_publisher_ =
         this->create_publisher<sensor_msgs::msg::CameraInfo>("uav_camera", 10);
+    heading_publisher_ =
+        this->create_publisher<std_msgs::msg::Float32>("uav_heading", 10);
     pipe_ = popen(
         "ffmpeg -i rtmp://localhost/live/stream1 -f rawvideo -pix_fmt bgr24 -",
         "r");
@@ -64,6 +67,10 @@ public:
 
       cam_publisher_->publish(message);
 
+      auto heading_msg = std_msgs::msg::Float32();
+      heading_msg.data = 0.0f;
+      heading_publisher_->publish(heading_msg);
+
       cv::imshow("RTMP Stream", frame);
       cv::waitKey(1);
     });
@@ -74,6 +81,7 @@ public:
 private:
   rclcpp::Publisher<sensor_msgs::msg::Image>::SharedPtr publisher_;
   rclcpp::Publisher<sensor_msgs::msg::CameraInfo>::SharedPtr cam_publisher_;
+  rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr heading_publisher_;
   rclcpp::TimerBase::SharedPtr timer_;
   FILE *pipe_;
   float camera_height_;
