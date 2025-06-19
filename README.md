@@ -1,6 +1,6 @@
 # README
 
-To integrate into other systems just copy and paste the src/my_cpp_package folder into your ros2 package directory and build
+To integrate into other systems just copy and paste the src/uav_image folder into your ros2 package directory and build
 
 Requires ffmpeg to be installed and accessable on the system. Along with the following ros2 packages
 

@@ -7,7 +7,7 @@ version = "0.1.0"
 
 [tasks]
 build = "colcon build --cmake-args -G Ninja --event-handlers console_direct+"
-run = "ros2 run my_cpp_package my_node"
+run = "ros2 run uav_image uav_image"
 
 [activation]
 scripts = ["install/setup.sh"]

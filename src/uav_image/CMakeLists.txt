@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(my_cpp_package)
+project(uav_image)
 
 # macOS RPATH fix
 if(APPLE)
@@ -14,14 +14,14 @@ find_package(image_transport REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(OpenCV REQUIRED)
 
-add_executable(my_node src/my_node.cpp)
-ament_target_dependencies(my_node rclcpp
+add_executable(uav_image src/uav_image.cpp)
+ament_target_dependencies(uav_image rclcpp
 OpenCV
 cv_bridge
 image_transport
 sensor_msgs)
 
-install(TARGETS my_node
+install(TARGETS uav_image
   DESTINATION lib/${PROJECT_NAME}
 )
 

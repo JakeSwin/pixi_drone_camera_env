@@ -8,7 +8,7 @@
 
 class MyNode : public rclcpp::Node {
 public:
-  MyNode() : Node("my_node") {
+  MyNode() : Node("uav_image") {
     auto qos = rclcpp::QoS(1)
                    .reliability(rclcpp::ReliabilityPolicy::BestEffort)
                    .history(rclcpp::HistoryPolicy::KeepLast)
